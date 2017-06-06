@@ -28,7 +28,6 @@ export class ProductService {
          return this.http.get(this.productUrl + term)
                         // ...and calling .json() on the response to return data
                          .map((response:Response) => {
-                             alert(JSON.stringify(response.json()));
                              return response.json();
                              })
                          //...errors if any
