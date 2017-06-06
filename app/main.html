@@ -1,0 +1,241 @@
+<div class="header-container">
+    <div class="header-panel">
+        <div class="container-fluid">
+            <div class="row " style="margin: 10px">
+                <div (click)="goToHome()" class="pull-left">
+                    <h2  style="color: white;padding: 10px;margin: 0px;">Shopping India</h2>
+                </div>
+                <div *ngIf="showCartAndList" class="pull-right" style="display: flex">
+                    <div (click)="showHideList(true)">
+                        <a class="btn btn-default btn-fab ">
+                            <i class="material-icons">favorite_border</i>
+                        </a>
+                        <span class="badge" style="background-color: #000;float: left">{{listItems.length}}</span>
+                    </div>
+                    <div (click)="showHideCart(true)">
+                        <a class="btn btn-default btn-fab ">
+                            <i class="material-icons">shopping_cart</i>
+                        </a>
+                        <span class="badge" style="background-color: #000;float: left">{{cartItems.length}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="showNavigationBar" class="navbar navbar-inverse" style="background-color: #f44336;">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target=".navbar-inverse-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" [routerLink]="['/dashboard']" routerLinkActive="active">Home</a>
+            </div>
+            <div class="navbar-collapse collapse navbar-inverse-collapse">
+                <ul class="nav navbar-nav">
+                    <li style="display: none"><a href="javascript:void(0)">Link</a></li>
+                </ul>
+                <ul  class="nav navbar-nav navbar-right">
+                    <li><a style="color: white;cursor: default;pointer-events: none;">Sort By</a></li>
+                    <li class="dropdown">
+                        <a data-target="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Name
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a (click)="sortBy()">Popular</a></li>
+                            <li><a href="javascript:void(0)">Name</a></li>
+                            <li class="divider"></li>
+                            <li class="dropdown-header">Price</li>
+                            <li><a href="javascript:void(0)">Low to High</a></li>
+                            <li><a href="javascript:void(0)">High to Low</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="navbar-form navbar-right">
+                    <div class="form-group is-empty">
+                        <input #searchBox type="text" class="form-control col-sm-5" placeholder="Search Product"(keyup)="onKeyUpSearch(searchBox.value)">
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngIf="showCart" class="overlay">
+    <div class="popup">
+        <h2>Shopping Cart<span style="color: #2C2C2C">({{cartItems.length}} items)</span></h2>
+        <a class="close" (click)="showHideCart(false)">&times;</a>
+        <hr>
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-xs-9">
+                    <table style="">
+                        <tr>
+                            <th colspan="2">
+                                Item Details
+                            </th>
+                            <th>
+                                Quantity
+                            </th>
+                            <th>
+                                Price
+                            </th>
+                            <th colspan="2">
+                                SubTotal
+                            </th>
+                        </tr>
+                        <tr *ngFor="let product of cartItems">
+                            <td style="width: 25%">
+                                <img src="{{product.image}}" style="display: block;margin-left: auto;margin-right: auto"
+                                     class="img-responsive" alt="{{product.company}}'s Laptop"
+                                     width="250px" height="170px">
+                            </td>
+                            <td style="width: 30%">
+                                {{product.name}}
+                            </td>
+                            <td>
+                                <ul class="pagination">
+                                    <li><a id="{{'decreaseCart'+product.id}}"
+                                           (click)="decreaseQuantityCart(product)">«</a>
+                                    </li>
+                                    <li><a class="active">{{product.requiredQuantity}}</a></li>
+                                    <li><a id="{{'increaseCart'+product.id}}"
+                                           (click)="increaseQuantityCart(product)">»</a>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                Rs. {{product.price}}
+                            </td>
+                            <td>
+                                Rs. {{product.price * product.requiredQuantity}}
+                            </td>
+                            <td>
+                                <a (click)="removeFromCart(product)">
+                                    <i class="material-icons">delete</i>
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-xs-3">
+                    <div class="row">
+                        <h2>Delivery Address</h2>
+                        <div>
+                            <textarea rows="6" class="form-control floating-label"
+                                      placeholder="Enter Address"
+                                      style="padding:10px; outline: 1px solid rgba(63, 81, 181, 0.31)"></textarea>
+                        </div>
+                        <hr style="padding:5px 0 0 5px;">
+                        <div>
+                            <i class="material-icons">lock_outline</i>
+                            <strong>100%</strong> Safe and Secure Payments
+                        </div>
+                        <div>
+                            <i class="material-icons">verified_user</i>
+                            <strong>TrustPay:</strong> Easy Returns Policy
+                        </div>
+                        <hr style="padding:5px 0 0 5px;">
+                        <div>
+                            <h3>You Pay:
+                                <strong>{{"Rs. " + finalPriceCart}}</strong></h3>
+                        </div>
+                        <a href="javascript:void(0)" class="btn btn-default btn-info btn-lg btn-block btn-raised">
+                            Place Order
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngIf="showList" class="overlay">
+    <div class="popup">
+        <h2>My Wish List<span style="color: #4C4C4C">({{listItems.length}} items)</span></h2>
+        <a class="close" (click)="showHideList(false)">&times;</a>
+        <div class="content">
+            <table style="">
+                <tr>
+                    <th>
+                        Select
+                    </th>
+                    <th colspan="2">
+                        Item Details
+                    </th>
+                    <th>
+                        Quantity
+                    </th>
+                    <th>
+                        Price
+                    </th>
+                    <th>
+                        SubTotal
+                    </th>
+                    <th>
+                        Delete
+                    </th>
+                </tr>
+                <tr *ngFor="let product of listItems">
+                    <td>
+                        <div class="checkbox" style="margin: 0">
+                            <label>
+                                <input type="checkbox" id="{{'listProduct'+product.id}}">
+                                <span class="checkbox-material">
+                                    <span class="check"></span></span>
+                                <span style="color:#2b2b2b"></span>
+                            </label>
+                        </div>
+                    </td>
+                    <td width="25%">
+                        <img src="{{product.image}}"
+                             style="display: block;margin-left: auto;margin-right: auto;max-width: 50%"
+                             class="img-responsive" alt="{{product.company}}'s Laptop">
+                    </td>
+                    <td width="15%" style="padding: 0 10px 0 0">
+                        {{product.name}}
+                    </td>
+                    <td>
+                        <ul class="pagination">
+                            <li><a id="{{'decreaseList'+product.id}}" (click)="decreaseQuantityList(product)">«</a>
+                            </li>
+                            <li><a class="active">{{product.requiredQuantity}}</a></li>
+                            <li><a id="{{'increaseList'+product.id}}" (click)="increaseQuantityList(product)">»</a>
+                            </li>
+                        </ul>
+                    </td>
+                    <td>
+                        Rs. {{product.price}}
+                    </td>
+                    <td>
+                        Rs. {{product.price * product.requiredQuantity}}
+                    </td>
+                    <td>
+                        <a (click)="removeFromList(product)">
+                            <i class="material-icons">delete</i>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+            <div style="display: flex;margin: 0 30px 0 30px">
+                <a (click)="showHideList(false)" style="margin: 5px"
+                   class="btn btn-default btn-warning btn-lg btn-block btn-raised">
+                    Continue Shopping
+                </a>
+                <a style="margin: 5px" (click)="moveFromListToCart()"
+                   class="btn btn-default btn-info btn-lg btn-block btn-raised">
+                    Add Selected to Cart
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="content-container">
+    <router-outlet></router-outlet>
+</div>
+

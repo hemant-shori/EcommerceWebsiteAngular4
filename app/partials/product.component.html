@@ -1,0 +1,232 @@
+<div class="container-fluid">
+    <div class="row">
+        <nav class="col-xs-3">
+            <h3>Browse</h3>
+            <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8627;&nbsp;Laptops</h4>
+            <table class="specTable" style="background-color: white;margin-bottom: 10px;">
+                <tr>
+                    <th class="groupHead" colspan="2">Brand</th>
+                </tr>
+                <tr>
+                    <td class="customKey">
+                        <div class="checkbox" style="margin: 0;" (click)="filterCompany($event,filterCompanyNames[0])">
+                            <label style="width: 100%">
+                                <input type="checkbox" id="{{'CompanyName'+filterCompanyNames[0]}}">
+                                <span style="color:#2b2b2b">{{ filterCompanyNames[0] }}</span>
+                            </label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="customKey">
+                        <div class="checkbox" style="margin: 0;" (click)="filterCompany($event,filterCompanyNames[1])">
+                            <label style="width: 100%">
+                                <input type="checkbox" id="{{'CompanyName'+filterCompanyNames[1]}}">
+                                <span style="color:#2b2b2b">{{ filterCompanyNames[1] }}</span>
+                            </label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="customKey">
+                        <div class="checkbox" style="margin: 0;" (click)="filterCompany($event,filterCompanyNames[2])">
+                            <label style="width: 100%">
+                                <input type="checkbox" id="{{'CompanyName'+filterCompanyNames[2]}}">
+                                <span style="color:#2b2b2b">{{ filterCompanyNames[2] }}</span>
+                            </label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="customKey">
+                        <div class="checkbox" style="margin: 0;" (click)="filterCompany($event,filterCompanyNames[3])">
+                            <label style="width: 100%">
+                                <input type="checkbox" id="{{'CompanyName'+filterCompanyNames[3]}}">
+                                <span style="color:#2b2b2b">{{ filterCompanyNames[3] }}</span>
+                            </label>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <!--for filter Processor Names-->
+            <table class="specTable" style="background-color: white;margin-bottom: 10px;">
+                <tr>
+                    <th class="groupHead" colspan="2">Processor</th>
+                </tr>
+                <tr>
+                    <td class="customKey">
+                        <div class="checkbox" style="margin: 0"
+                             (click)="filterProcessor($event,filterProcessorNames[0])">
+                            <label>
+                                <input type="checkbox" id="{{'processorName'+filterProcessorNames[0]}}">
+                                <span style="color:#2b2b2b">{{ 'Intel Core '+filterProcessorNames[0] }}</span>
+                            </label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="customKey">
+                        <div class="checkbox" style="margin: 0"
+                             (click)="filterProcessor($event,filterProcessorNames[1])">
+                            <label>
+                                <input type="checkbox" id="{{'processorName'+filterProcessorNames[1]}}">
+                                <span style="color:#2b2b2b">{{ 'Intel Core '+filterProcessorNames[1] }}</span>
+                            </label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="customKey">
+                        <div class="checkbox" style="margin: 0"
+                             (click)="filterProcessor($event,filterProcessorNames[2])">
+                            <label>
+                                <input type="checkbox" id="{{'processorName'+filterProcessorNames[2]}}">
+                                <span style="color:#2b2b2b">{{ 'Intel Core '+filterProcessorNames[2] }}</span>
+                            </label>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <!--for filter Ram Names-->
+            <table class="specTable" style="background-color: white;margin-bottom: 10px;">
+                <tr>
+                    <th class="groupHead" colspan="2">Ram</th>
+                </tr>
+                <tr>
+                    <td class="customKey">
+                        <div class="checkbox" style="margin: 0" (click)="filterRam($event,filterRamNames[0])">
+                            <label>
+                                <input type="checkbox" id="{{filterRamNames[0]}}">
+                                <span style="color:#2b2b2b">{{ filterRamNames[0] }}</span>
+                            </label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="customKey">
+                        <div class="checkbox" style="margin: 0" (click)="filterRam($event,filterRamNames[1])">
+                            <label>
+                                <input type="checkbox" id="{{filterRamNames[1]}}">
+                                <span style="color:#2b2b2b">{{ filterRamNames[1] }}</span>
+                            </label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="customKey">
+                        <div class="checkbox" style="margin: 0" (click)="filterRam($event,filterRamNames[2])">
+                            <label>
+                                <input type="checkbox" id="{{filterRamNames[2]}}">
+                                <span style="color:#2b2b2b">{{ filterRamNames[2] }}</span>
+                            </label>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <!--for filter HHD Names-->
+            <table class="specTable" style="background-color: white;margin-bottom: 10px;">
+                <tr>
+                    <th class="groupHead" colspan="2">HardDrive</th>
+                </tr>
+                <tr>
+                    <td class="customKey">
+                        <div class="checkbox" style="margin: 0" (click)="filterHHD($event,filterHHDNames[0])">
+                            <label>
+                                <input type="checkbox" id="{{filterHHDNames[0]}}">
+                                <span style="color:#2b2b2b">{{ filterHHDNames[0] }}</span>
+                            </label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="customKey">
+                        <div class="checkbox" style="margin: 0" (click)="filterHHD($event,filterHHDNames[1])">
+                            <label>
+                                <input type="checkbox" id="{{filterHHDNames[1]}}">
+                                <span style="color:#2b2b2b">{{ filterHHDNames[1] }}</span>
+                            </label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="customKey">
+                        <div class="checkbox" style="margin: 0" (click)="filterHHD($event,filterHHDNames[2])">
+                            <label>
+                                <input type="checkbox" id="{{filterHHDNames[2]}}">
+                                <span style="color:#2b2b2b">{{ filterHHDNames[2] }}</span>
+                            </label>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+        </nav>
+
+        <div class="col-xs-9">
+            <div class="row" style="margin: auto ;">
+                <div class="pull-left">
+                    <h3>All Product</h3>
+                    <p style="margin-left: 10px;">Showing {{visibleProducts.length}} of {{products.length}}</p>
+                </div>
+                <div class="pull-right " style="margin-right: 25px">
+                    <ul class="pagination">
+                        <li id="previousPage"><a (click)="previousPage()">«</a></li>
+                        <li><a class="active">{{currentPage}}</a></li>
+                        <li id="nextPage"><a (click)="nextPage()">»</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-md-4 col-lg-3 "
+                     *ngFor="let product of visibleProducts"
+                     (click)="onSelect(product)">
+                    <div class="card custom-card">
+                        <p class="card-head">{{product.name}}</p>
+                        <img src="{{product.image}}" style="display: block;margin-left: auto;margin-right: auto"
+                             class="img-responsive" alt="{{product.company}}'s Laptop"
+                             width="250px" height="170px">
+                        <div>
+                            <table class="specTable">
+                                <tr>
+                                    <th class="groupHead" colspan="2" style="text-align: center">Specifications</th>
+                                </tr>
+                                <tr>
+                                    <td class="specsKey">
+                                        Company
+                                    </td>
+                                    <td class="specsValue">
+                                        {{product.company}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="specsKey">
+                                        Price
+                                    </td>
+                                    <td class="specsValue">
+                                        Rs.<span style="color: red">{{product.price}}</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div>
+                            <a id="{{'list'+product.id}}" (click)="addToList($event,product);"
+                               class="btn btn-raised btn-primary btn-sm">Add To List</a>
+                            <a id="{{'cart'+product.id}}" (click)="addToCart($event,product);"
+                               class="btn btn-raised btn-success btn-sm">Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="error" *ngIf="error">{{error}}</div>
+
+
+<!--
+Copyright 2016 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->

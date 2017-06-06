@@ -1,0 +1,30 @@
+{
+    "name": "EcommerceWebsiteAngular4",
+    "preferGlobal": true,
+    "version": "1.0.0",
+    "author": "Hemant Shori <hemantshori93@gmail.com>",
+    "description": "Ecommerce Website Angular 4",
+    "license": "MIT",
+    "scripts": {
+        "start": "node ./node-static-server.js"
+    },
+    "dependencies": {
+    "@angular/common": "~4.0.0",
+    "@angular/compiler": "~4.0.0",
+    "@angular/core": "~4.0.0",
+    "@angular/forms": "~4.0.0",
+    "@angular/http": "~4.0.0",
+    "@angular/platform-browser": "~4.0.0",
+    "@angular/platform-browser-dynamic": "~4.0.0",
+    "@angular/router": "~4.0.0",
+
+    "angular-in-memory-web-api": "~0.3.0",
+    "systemjs": "0.19.40",
+    "core-js": "^2.4.1",
+    "rxjs": "5.0.1",
+    "zone.js": "^0.8.4",
+	"node-static": "0.7.9",
+	"opn": "5.0.0"
+	
+    }
+}

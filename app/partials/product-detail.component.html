@@ -1,0 +1,305 @@
+<div *ngIf="selectedProduct">
+    <div class="container">
+        <div class="row card">
+            <div class="col-xs-4">
+                <img src="{{selectedProduct.image}}" style="display: block;margin-left: auto;margin-right: auto"
+                     class="img-responsive" alt="{{selectedProduct.company}}'s Laptop"
+                     width="250px" height="170px">
+                <hr>
+                <div>
+                    <h4><span style="text-decoration: underline;"> Selling Price :</span></h4>
+                    <h3 style="color: red">Rs. {{selectedProduct.price}}</h3>
+                    <a (click)="addToList(selectedProduct)" class="btn btn-raised btn-primary">Add To List</a>
+                    <a (click)="addToCart(selectedProduct)" class="btn btn-raised btn-success">Add To Cart</a>
+                </div>
+            </div>
+            <div class="col-xs-8">
+                <h3><b style="color: #2f2f2f">{{selectedProduct.name}}</b>
+                </h3>
+                <hr>
+                <table cellspacing="0" class="specTable">
+                    <tbody>
+                    <tr>
+                        <th class="groupHead" colspan="2">General</th>
+                    </tr>
+                    <tr>
+                        <td class="specsKey">Brand</td>
+                        <td class="specsValue">
+                            {{selectedProduct.company}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="specsKey">Color</td>
+                        <td class="specsValue">
+                            {{selectedProduct.color}}
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <table cellspacing="0" class="specTable">
+                    <tbody>
+                    <tr>
+                        <th class="groupHead" colspan="2">Memory</th>
+                    </tr>
+                    <tr>
+                        <td class="specsKey">RAM Frequency</td>
+                        <td class="specsValue">
+                            1600 MHz
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="specsKey">System Memory</td>
+                        <td class="specsValue">
+                            {{selectedProduct.ram}} GB
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="specsKey">Memory Slots</td>
+                        <td class="specsValue">
+                            2
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <table cellspacing="0" class="specTable">
+                    <tbody>
+                    <tr>
+                        <th class="groupHead" colspan="2">Processor</th>
+                    </tr>
+                    <tr>
+                        <td class="specsKey">Brand</td>
+                        <td class="specsValue">
+                            {{selectedProduct.processor}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="specsKey">Cache</td>
+                        <td class="specsValue">
+                            3 MB
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="specsKey">Clock Speed</td>
+                        <td class="specsValue">
+                            up to 2.70 GHz
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <table cellspacing="0" class="specTable">
+                    <tbody>
+                    <tr>
+                        <th class="groupHead" colspan="2">Platform</th>
+                    </tr>
+                    <tr>
+                        <td class="specsKey">Operating System</td>
+                        <td class="specsValue">
+                            {{selectedProduct.operatingSystem}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="specsKey">OS Architecture</td>
+                        <td class="specsValue">
+                            64 bit
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <table cellspacing="0" class="specTable">
+                    <tbody>
+                    <tr>
+                        <th class="groupHead" colspan="2">Storage</th>
+                    </tr>
+                    <tr>
+                        <td class="specsKey">HDD Capacity</td>
+                        <td class="specsValue">
+                            {{selectedProduct.hardDisk}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="specsKey">RPM</td>
+                        <td class="specsValue">
+                            5400
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <table cellspacing="0" class="specTable">
+                    <tbody>
+                    <tr>
+                        <th class="groupHead" colspan="2">Display</th>
+                    </tr>
+                    <tr>
+                        <td class="specsKey">Screen Size</td>
+                        <td class="specsValue">
+                            {{selectedProduct.screenSize}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="specsKey">Screen Type</td>
+                        <td class="specsValue">
+                            {{selectedProduct.screenSize}}-inch HD (1366 x 768) Truelife LED-Backlit Display
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <table cellspacing="0" class="specTable">
+                    <tbody>
+                    <tr>
+                        <th class="groupHead" colspan="2">Input</th>
+                    </tr>
+                    <tr>
+                        <td class="specsKey">Pointer Device</td>
+                        <td class="specsValue">
+                            Multi-touch gesture-enabled pad with integrated scrolling
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="specsKey">Web Camera</td>
+                        <td class="specsValue">
+                            2 Megapixel
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="specsKey">Keyboard</td>
+                        <td class="specsValue">
+                            English keyboard without backlight
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <table cellspacing="0" class="specTable">
+                    <tbody>
+                    <tr>
+                        <th class="groupHead" colspan="2">Communication</th>
+                    </tr>
+                    <tr>
+                        <td class="specsKey">Ethernet</td>
+                        <td class="specsValue">
+                            Integrated 10/100 Ethernet LAN
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="specsKey">Bluetooth</td>
+                        <td class="specsValue">
+                            V4.0
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="specsKey">Wireless WAN</td>
+                        <td class="specsValue">
+                            Intel® Centrino® Wireless-AC 3160 + Bluetooth 4.0
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="specsKey">Wireless LAN</td>
+                        <td class="specsValue">
+                            IEEE 802.11b/g/n
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <table cellspacing="0" class="specTable">
+                    <tbody>
+                    <tr>
+                        <th class="groupHead" colspan="2">Ports/Slots</th>
+                    </tr>
+                    <tr>
+                        <td class="specsKey">Multi Card Slot</td>
+                        <td class="specsValue">
+                            Media Card (SD, SDHC, SDXC)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="specsKey">USB Port</td>
+                        <td class="specsValue">
+                            2 x USB 2.0, 1 x USB 3.0
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="specsKey">HDMI Port</td>
+                        <td class="specsValue">
+                            1 x HDMI Port
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <table cellspacing="0" class="specTable">
+                    <tbody>
+                    <tr>
+                        <th class="groupHead" colspan="2">Audio</th>
+                    </tr>
+                    <tr>
+                        <td class="specsKey">Internal Mic</td>
+                        <td class="specsValue">
+                            Single Digital Microphone Integrated
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="specsKey">Speakers</td>
+                        <td class="specsValue">
+                            2 tuned speakers with Waves MaxxAudio® processing
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="specsKey">Audio Chips</td>
+                        <td class="specsValue">
+                            Intel High Definition Audio
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+
+
+                <table cellspacing="0" class="specTable">
+                    <tbody>
+                    <tr>
+                        <th class="groupHead" colspan="2">Warranty</th>
+                    </tr>
+                    <tr>
+                        <td class="specsKey">Covered in Warranty</td>
+                        <td class="specsValue">
+                            Warranty of the product is limited to manufacturing defects only
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="specsKey">Warranty Summary</td>
+                        <td class="specsValue">
+                            2 Yr Ltd Hardware Warranty, InHome Service after Remote Diagnosis
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <table cellspacing="0" class="specTable">
+                    <tbody>
+                    <tr>
+                        <th class="groupHead" colspan="2">In the Box</th>
+                    </tr>
+                    <tr>
+                        <td class="specsKey">Sales Package</td>
+                        <td class="specsValue">
+                            1 Laptop, 1 Charger, 1 Battery
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--<div *ngIf="selectedProduct">-->
+
+<!--<h2>1{{selectedProduct.name}} details!</h2>-->
+<!--<div><label>id: </label>{{selectedProduct.id}}</div>-->
+<!--<div>-->
+<!--<label>name: </label>-->
+<!--<input [(ngModel)]="selectedProduct.name" placeholder="name">-->
+<!--</div>-->
+<!--<button (click)="goBack()">Back</button>-->
+<!--<button (click)="save()">Save</button>-->
+
+<!--</div>-->

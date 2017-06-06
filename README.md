@@ -1,2 +1,1 @@
-# EcommerceWebsiteAngular4
-Ecommerce Website Angular 4
+Angular 4 Ecommerce Website
