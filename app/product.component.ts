@@ -1,5 +1,5 @@
 /**
- * Created by hemant.shori on 7/6/2016.
+ * Created by hemant.shori on 5/6/2017.
  */
 import {Component, OnInit} from "@angular/core";
 import {Product} from "./product";
@@ -22,8 +22,8 @@ export class ProductsComponent implements OnInit {
     error: any;
     numOfPages: number = 0;
     currentPage: number = 1;
-    filterCompanyNames: string[] = ["HP", "Dell", "Apple", "Lenovo"];
-    filterProcessorNames: string[] = ["i3", "i5", "i7"];
+    filterCompanyNames: string[] = ["Apple", "Dell", "HP", "Lenovo"];
+    filterProcessorNames: string[] = ["i7", "i5", "i3"];
     filterRamNames: string[] = ["4GB", "8GB", "16GB"];
     filterHHDNames: string[] = ["500GB", "1TB", "2TB"];
     companyNames: string[] = [];
@@ -38,7 +38,30 @@ export class ProductsComponent implements OnInit {
         AppComponent.object.showCartAndList = true;
         ProductsComponent.self = this;
     }
+    sortProductsBy(sortType: string){
+        if(sortType == "Name"){            
+            this.products = this.mainStock.sort(function(a, b){
+                    var nameA=a.name.toLowerCase(), nameB=b.name.toLowerCase();
+                    if (nameA < nameB) //sort string ascending
+                        return -1;
+                    if (nameA > nameB)
+                        return 1;
+                    return 0; //default return value (no sorting)
+                    });
+        } else if(sortType === "Popular"){
+            this.products = [];
+            for(let i = 0; i < this.filterProcessorNames.length; i++){
+                this.products = this.products.concat(this.mainStock.filter(product => {
+                    if(product.processor.indexOf(this.filterProcessorNames[i]) !== -1)
+                        return true;
+                        return false;
+                    }));
+            }
+        }
 
+        this.updatePagination(this.products.length);
+        this.updateVisibleProducts();
+    }
     filterCompany(event, companyName: string) {
         event.stopPropagation();
         event.preventDefault();
@@ -158,26 +181,35 @@ export class ProductsComponent implements OnInit {
         this.updateVisibleProducts();
     }
 
-    private getProducts() {
-        this.productService.getProducts().then(products => {
-                this.mainStock = products;
-                this.products = products;
-                this.updatePagination(products.length);
-                this.updateVisibleProducts();
-            }
-        )
+    private getProducts() {   
+         this.productService.getProducts()
+                           .subscribe(
+                               products => {
+                                    this.mainStock = products;
+                                    this.products = products;
+                                    this.updatePagination(products.length);
+                                    this.updateVisibleProducts();
+                                },
+                                err => {
+                                    // Log errors if any
+                                    console.log(err);
+                                });
+            
     }
 
     searchProducts(term: string) {
-        ProductsComponent.self.products = ProductsComponent.self.mainStock.filter(product => {
-            const index = product.name.toLowerCase().indexOf(term.toLowerCase());
-            if (index != -1)
-                return true;
-            else
-                return false;
-        });
-        ProductsComponent.self.updatePagination(ProductsComponent.self.products.length);
-        ProductsComponent.self.updateVisibleProducts();
+         this.productService.searchProducts(term)
+                           .subscribe(
+                               products => {
+                                    this.mainStock = products;
+                                    this.products = products;
+                                    this.updatePagination(products.length);
+                                    this.updateVisibleProducts();
+                                },
+                                err => {
+                                    // Log errors if any
+                                    console.log(err);
+                                });
     }
 
     updatePagination(length: number) {
