@@ -272,26 +272,6 @@ export class ProductsComponent implements OnInit {
         this.selectedProduct = null;
     }
 
-    close(savedHero: Product) {
-        console.log("close");
-        this.addingProduct = false;
-        if (savedHero) {
-            this.getProducts()
-        }
-    }
-
-    deleteHero(hero: Product, event: any) {
-        event.stopPropagation();
-        this.productService
-            .delete(hero)
-            .then(res => {
-                this.products = this.products.filter(h => h !== hero);
-                if (this.selectedProduct === hero) {
-                    this.selectedProduct = null;
-                }
-            })
-            .catch(error => this.error = error);
-    }
 
     ngOnInit(): any {
         $.material.init();
@@ -303,9 +283,6 @@ export class ProductsComponent implements OnInit {
         this.goToDetails();
     }
 
-    sortBy() {
-        alert("yoyo");
-    }
 
     private goToDetails() {
         let link = ['/detail', this.selectedProduct.id];
