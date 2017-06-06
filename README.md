@@ -1,7 +1,7 @@
 ## Angular 4 Ecommerce Website
 
 ## About
-Angular Ecommerece Website using Material Design Bootstrap V3 [Material Design guidelines by Google](https://material.google.com/) which takes the data from Angular in Memory API and Do the sorting and Searching between list of products
+Angular 4 Product Based Ecommerce Website using Material Design Bootstrap V3 [Material Design guidelines by Google](https://material.google.com/) which takes the data from Public API and enable user the sorting and Searching between list of products
 
 
 ## How to run
