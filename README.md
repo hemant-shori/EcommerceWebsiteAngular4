@@ -25,4 +25,4 @@ Currently, Website supports Google Chrome (tested v37+), Mozilla Firefox (tested
 ## License
 - [MIT License](LICENSE.md) 
 
-- All the Photos are taken from pexel.com which uses CC0 License. A Creative Commons (CC) license is one of several public copyright licenses that enable the free distribution of an otherwise copyrighted work. A CC license is used when an author wants to give people the right to share, use, and build upon a work that they have created. This means the pictures are completely free to be used for any legal purpose.
+- All the Photos are taken from pexels.com which uses CC0 License [Pexels.com License](https://www.pexels.com/photo-license/). A Creative Commons (CC) license is one of several public copyright licenses that enable the free distribution of an otherwise copyrighted work. A CC license is used when an author wants to give people the right to share, use, and build upon a work that they have created. This means the pictures are completely free to be used for any legal purpose.
