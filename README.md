@@ -10,7 +10,7 @@ You need install Node and run the script below:
 
 - NPM : `npm start`
 
-As all the Node modules are there in the repository and For Angular CDN has been used. there for no need to install node_modules just run the script above
+As all the Node modules are there in the repository and For Angular CDN has been used. therefore, no need to install node_modules just run the script above
 
 
 ### Icons
@@ -23,4 +23,6 @@ Website supports the full range of original Material Design icons!
 Currently, Website supports Google Chrome (tested v37+), Mozilla Firefox (tested 30+), and Internet Explorer (tested 11+). Mobile browsers are not currently tested but they may work.
 
 ## License
-[MIT License](LICENSE.md) 
+- [MIT License](LICENSE.md) 
+
+- All the Photos are taken from pexel.com which uses CC0 License. A Creative Commons (CC) license is one of several public copyright licenses that enable the free distribution of an otherwise copyrighted work. A CC license is used when an author wants to give people the right to share, use, and build upon a work that they have created. This means the pictures are completely free to be used for any legal purpose.
