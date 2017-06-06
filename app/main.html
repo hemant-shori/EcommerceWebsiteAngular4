@@ -39,19 +39,19 @@
                     <li style="display: none"><a href="javascript:void(0)">Link</a></li>
                 </ul>
                 <ul  class="nav navbar-nav navbar-right">
-                    <li><a style="color: white;cursor: default;pointer-events: none;">Sort By</a></li>
+                    <li><a style="color: white;cursor: default;pointer-events: none;"><b>Sort By</b></a></li>
                     <li class="dropdown">
                         <a data-target="#" class="dropdown-toggle" data-toggle="dropdown">
-                            Name
-                            <b class="caret"></b>
+                            <span id="dropdown-label" ><b>{{sortType}}</b></span><b class="caret"></b>
+                            
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a (click)="sortBy()">Popular</a></li>
-                            <li><a href="javascript:void(0)">Name</a></li>
+                            <li><a (click)="sortBy('Popular')">Popular</a></li>
+                            <li><a (click)="sortBy('Name')">Name</a></li>
                             <li class="divider"></li>
                             <li class="dropdown-header">Price</li>
-                            <li><a href="javascript:void(0)">Low to High</a></li>
-                            <li><a href="javascript:void(0)">High to Low</a></li>
+                            <li><a (click)="sortBy('Low to High')">Low to High</a></li>
+                            <li><a (click)="sortBy('High to Low')">High to Low</a></li>
                         </ul>
                     </li>
                 </ul>
