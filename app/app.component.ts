@@ -10,6 +10,7 @@ import {Router} from "@angular/router";
 })
 
 export class AppComponent {
+    sortType: string = "Name";
     showCartAndList: boolean = false;
     showNavigationBar: boolean = false;
     public static object: any;
@@ -22,7 +23,12 @@ export class AppComponent {
     constructor() {
         AppComponent.object = this;
     }
-
+    
+    sortBy(sortType:string){
+        this.sortType = sortType;
+        ProductsComponent.self.sortProductsBy(sortType);
+    }
+    
     goToHome() {
         window.location.assign("http://localhost:8081/");
     }
@@ -33,7 +39,7 @@ export class AppComponent {
         }
         AppComponent.object.timeout = setTimeout(function () {
             ProductsComponent.self.searchProducts(term);
-        }, 700);
+        }, 800);
     }
 
 
