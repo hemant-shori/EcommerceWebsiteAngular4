@@ -458,14 +458,14 @@
 .uil-ring-css > div {
     position: absolute;
     display: block;
-    width: 160px;
-    height: 160px;
+    width: 100px;
+    height: 100px;
     top: 20px;
     left: 20px;
-    border-radius: 80px;
+    border-radius: 50px;
     box-shadow: 0 3px 0 0 #f7c223;
     -webkit-transform-origin: 80px 81.5px;
-    transform-origin: 80px 81.5px;
+    transform-origin: 50px 51.5px;
     -webkit-animation: uil-ring-anim 1s linear infinite;
     animation: uil-ring-anim 1s linear infinite;
 }
