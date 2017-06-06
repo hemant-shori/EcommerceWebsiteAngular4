@@ -9,8 +9,8 @@
                 <div>
                     <h4><span style="text-decoration: underline;"> Selling Price :</span></h4>
                     <h3 style="color: red">Rs. {{selectedProduct.price}}</h3>
-                    <a (click)="addToList(selectedProduct)" class="btn btn-raised btn-primary">Add To List</a>
-                    <a (click)="addToCart(selectedProduct)" class="btn btn-raised btn-success">Add To Cart</a>
+                    <a id="addToListDetails" (click)="addToList($event,selectedProduct)" class="btn btn-raised btn-primary">Add To List</a>
+                    <a id="addToCartDetails" (click)="addToCart($event,selectedProduct)" class="btn btn-raised btn-success">Add To Cart</a>
                 </div>
             </div>
             <div class="col-xs-8">
@@ -293,5 +293,5 @@
 <div *ngIf="!navigated" style="position: fixed;left: 40%;top: 30%;">
 <i class="material-icons md-48" style="width:100%; margin-left:48%;">error_outline</i>
 <br/>
-<h2> Oops Error Occurred</h2>
+<h2> Oops Error occurred </h2>
 </div>
