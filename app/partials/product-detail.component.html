@@ -290,16 +290,8 @@
         </div>
     </div>
 </div>
-
-<!--<div *ngIf="selectedProduct">-->
-
-<!--<h2>1{{selectedProduct.name}} details!</h2>-->
-<!--<div><label>id: </label>{{selectedProduct.id}}</div>-->
-<!--<div>-->
-<!--<label>name: </label>-->
-<!--<input [(ngModel)]="selectedProduct.name" placeholder="name">-->
-<!--</div>-->
-<!--<button (click)="goBack()">Back</button>-->
-<!--<button (click)="save()">Save</button>-->
-
-<!--</div>-->
+<div *ngIf="!navigated" style="position: fixed;left: 40%;top: 30%;">
+<i class="material-icons md-48" style="width:100%; margin-left:48%;">error_outline</i>
+<br/>
+<h2> Oops Error Occurred</h2>
+</div>
