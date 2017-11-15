@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--This base Url is So imp-->
+    <script>document.write('<base href="' + document.location + '" />');</script>
+
+    <title>HTML Project</title>
+    <!-- 1. Load libraries -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Mobile support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Material Design fonts -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- JQuery -->
+    <script src="js/jquery-1.10.2.min.js"></script>
+	
+    <!-- JQuery DatePicker-->
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <!-- Content starts-->
+	
+	<div class="navbar navbar-inverse">
+	
+	
+	  <div class="container-fluid">
+  
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand active" id="home"><i class="material-icons md-light">account_balance</i> &nbsp;&nbsp;Self Productivity Tracker</a>
+    </div>
+    <div class="navbar-collapse collapse navbar-responsive-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="javascript:void(0)">Table View</a></li>
+        <li><a href="javascript:void(0)">Graph View</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+    
+	<br/>
+	
+	<div class="jumbotron well container" >
+		<div id="homeContainer">
+			<h1>Self Productivity Tracker</h1>
+			<br/>
+			<p>Self productivity tracking - each user would be able to track his productivity based on weekly or monthly data.
+			the data comparison will be displayed in graphical format for the particular date range.
+			this would enable the user to track and implement his goals.
+			apart from this the user will have proper statistical data to communicate with his manager</p>
+		</div> 
+		
+        <div class="dateFilterSection container-fluid">
+			<div class="row">
+				<div class="col-md-3 area">
+					<div class="content">
+						<div class="form-group">
+							<label for="s1">Select Frequency</label>
+							<select id="s1" class="form-control">
+							  <option value="Daily">Daily</option>
+							  <option value="Weekly">Weekly</option>
+							  <option value="Monthly">Monthly</option>
+							</select>
+						</div>
+					</div>
+				</div>
+		
+				<div class="col-md-3 area">
+					<div class="content">
+					From Date: <input type="text" class="datepicker">
+					</div>
+				</div>
+				<div class="col-md-3 area">
+					<div class="content">
+					To Date: <input type="text" class="datepicker">
+					</div>
+				</div>
+				<div class="col-md-3 area">
+					<div class="content">
+						<a href="javascript:void(0)" class="btn btn-raised btn-primary" id="checkProdNowCompact">Check Productivity Now</a>
+					</div>
+				</div>
+			</div>	
+		</div>
+		<div id="contentHolder" style="display: none;">
+			
+		</div>
+	</div>
+	
+	
+	
+    <!-- Content ends-->
+	
+	<!-- Bootstrap CSS-->
+    <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-material-design.css">
+	
+	<!-- Bootstrap js-->
+    <link rel="stylesheet" href="css/ripples.css">
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/material.js"></script>
+    <script src="js/ripples.js"></script>
+	
+    <script src="js/customEvents.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+	
+	<script>
+    $(document).ready(function () {
+        $(function () {
+            $.material.init();
+			$( ".datepicker" ).datepicker();
+        });
+    });
+</script>
+</body>
+</html>
