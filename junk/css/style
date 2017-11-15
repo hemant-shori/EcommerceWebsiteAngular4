@@ -1,0 +1,10 @@
+/* Your custom styles */
+
+.area {
+    display:block;
+}
+.content {
+    display:table-cell;
+    vertical-align:middle;
+    height: 100px;
+}
